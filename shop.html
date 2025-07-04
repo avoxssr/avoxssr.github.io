@@ -8,6 +8,16 @@
     <script defer src="js/shop.js"></script>
 </head>
 <body>
+    <button class="open-sidebar-btn" onclick="toggleSidebar()">☰ เมนู</button>
+    <nav class="sidebar" id="sidebarNav">
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="shop.html">ร้านค้า</a></li>
+            <li><a href="about.html">เกี่ยวกับ</a></li>
+        </ul>
+    </nav>
+    <div id="mainContent">
+
     <header>
         <h1>ของที่ฉลามใช้</h1>
     </header>
@@ -68,5 +78,19 @@
           
     </header>
     </main>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebarNav');
+            const mainContent = document.getElementById('mainContent');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                mainContent.classList.remove('shrink-main');
+            } else {
+                sidebar.classList.add('open');
+                mainContent.classList.add('shrink-main');
+            }
+        }
+    </script>
 </body>
 </html>
