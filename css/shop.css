@@ -1,0 +1,123 @@
+/* shop.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #d0f0ff, #f0faff);
+    color: #222;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+header {
+    background: #00bcd4;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.shop-block {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.shop-title {
+    font-size: 1.4rem;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.shop-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shop-image:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.shop-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.shop-carousel video {
+    scroll-snap-align: center;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    outline: none;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shop-carousel video:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.shop-buy-btn {
+    margin-top: 20px;
+}
+
+.buy-link {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.buy-link:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .shop-block {
+        padding: 15px;
+    }
+
+    .shop-title {
+        font-size: 1.2rem;
+    }
+
+    .shop-image,
+    .shop-carousel video {
+        width: 100%;
+        max-width: 90vw;
+    }
+
+    .buy-link {
+        font-size: 0.95rem;
+        padding: 8px 18px;
+    }
+}

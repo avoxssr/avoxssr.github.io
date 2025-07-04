@@ -8,16 +8,20 @@
 </head>
 <body>
     <header>
-        <h1>ยินดีต้อนรับสู่ฉลาม</h1>
+        <h1>ยินดีต้อนรับสู่เว็ปฉลาม</h1>
     </header>
     <main>
         <p class="animated-text" id="loop-text">สวัสดีทุกคนที่หลงเข้ามานะ</p>
         <img src="images/main/avoig (9).png" alt="Sample Image" width="300">
-
+        
+            
         <section class="content-section">
             <h2>ช่องทางติดต่อและดูฉลาม</h2>
             <p>ติดตามฉลามได้ทุกช่องทางที่นี่:</p>
             <a href="https://linktr.ee/AVOxdo" target="_blank">🔗 linktr.ee/AVOxdo</a>
+        <div class="shop-button-container">
+            <button onclick="location.href='shop.html'">🛒 ไปหน้าร้านค้า</button>
+        </div>
         </section>
 
         <section class="content-section">
@@ -30,13 +34,26 @@
             <h2>ง่วง หิว</h2>
             <p>ง่วงนอนแล้ว หิวข้าวด้วย ไม่มีอะไรกินเลย</p>
             <img src="images/main/avoig (2).png" alt="Project Image" width="300">
-    
-        <button onclick="location.href='about.html'">เกี่ยวกับ</button>
+            <br>
+            <button onclick="location.href='about.html'">เกี่ยวกับ</button>
         </section>
 
-        <section class="content-section">
-            <h2>ติดต่อ</h2>
-            <p>สามารถติดต่อฉลามผ่าน Discord หรือ TikTok ได้เลยนะ</p>
+        <section class="video-carousel">
+            <button class="nav-btn left" onclick="prevVideo()">◀</button>
+
+            <div class="carousel-track">
+                <video class="carousel-item" src="images/video/mow.mp4" type="video/mp4" muted autoplay loop></video>
+                <video class="carousel-item" src="images/video/avo.mp4" type="video/mp4" muted autoplay loop></video>
+                <video class="carousel-item" src="images/video/cat.mp4" type="video/mp4" muted autoplay loop></video>
+            </div>
+
+            <button class="nav-btn right" onclick="nextVideo()">▶</button>
+        </section>
+
+        <section class="end">
+            <h2>ติดต่อฉลาม</h2>
+
+            <p>สามารถติดต่อฉลามผ่าน Discord และรับชมใน Youtube และ TikTok ได้เลยนะ</p>
             <button onclick="showMessage()">กดดูข้อความลับ</button>
             <p id="secret-message" class="hidden">ฉลามคือเทพ 🦈</p>
         </section>
