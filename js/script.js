@@ -36,11 +36,6 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    animateTextLoop();
-    updateCarousel();
-});
-
 let currentIndex = 0;
 
 function updateCarousel() {
@@ -50,14 +45,10 @@ function updateCarousel() {
 
     items.forEach((item, index) => {
         const relativeIndex = (index - currentIndex + total) % total;
-
-        // ปรับตำแหน่งแบบหมุนวน
         let offset = relativeIndex;
-        if (relativeIndex > total / 2) {
-            offset = relativeIndex - total;
-        }
+        if (relativeIndex > total / 2) offset = relativeIndex - total;
 
-        const position = offset * 320; // ระยะห่างระหว่างวิดีโอ (รวม margin)
+        const position = offset * 320;
         item.style.transform = `translateX(${position}px) scale(${offset === 0 ? 1 : 0.8})`;
         item.style.opacity = offset === 0 ? 1 : 0.5;
         item.style.zIndex = offset === 0 ? 10 : 1;
@@ -73,8 +64,6 @@ function updateCarousel() {
     });
 }
 
-
-
 function prevVideo() {
     const items = document.querySelectorAll('.carousel-item');
     currentIndex = (currentIndex - 1 + items.length) % items.length;
@@ -86,3 +75,8 @@ function nextVideo() {
     currentIndex = (currentIndex + 1) % items.length;
     updateCarousel();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    animateTextLoop();
+    updateCarousel();
+});

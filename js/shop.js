@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.querySelector('.shop-carousel');
     const videos = carousel.querySelectorAll('video');
 
-    // เล่นวิดีโอที่อยู่ตรงกลางของ viewport
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
