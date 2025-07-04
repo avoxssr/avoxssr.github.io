@@ -1,4 +1,4 @@
-/* shop.css */
+/* === css/shop.css === */
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +26,17 @@ header h1 {
     letter-spacing: 1px;
 }
 
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    justify-items: center;
+}
+
 .shop-block {
+    width: 100%;
     max-width: 500px;
-    margin: 30px auto;
     padding: 20px;
     background: white;
     border-radius: 20px;
@@ -65,6 +73,7 @@ header h1 {
     overflow-x: auto;
     padding: 10px 0;
     scroll-snap-type: x mandatory;
+    scroll-padding: 50%;
 }
 
 .shop-carousel video {
@@ -73,12 +82,14 @@ header h1 {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     outline: none;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s;
+    opacity: 0.7;
+    transform: scale(0.9);
 }
 
-.shop-carousel video:hover {
-    transform: scale(1.15);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+.shop-carousel video.playing {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .shop-buy-btn {
@@ -102,20 +113,18 @@ header h1 {
 }
 
 @media screen and (max-width: 600px) {
-    .shop-block {
+    main {
+        grid-template-columns: 1fr;
         padding: 15px;
     }
-
     .shop-title {
         font-size: 1.2rem;
     }
-
     .shop-image,
     .shop-carousel video {
         width: 100%;
         max-width: 90vw;
     }
-
     .buy-link {
         font-size: 0.95rem;
         padding: 8px 18px;
