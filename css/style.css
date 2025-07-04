@@ -1,11 +1,32 @@
 /* ==== พื้นฐานเว็บ ==== */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #e0f7fa;
+    /* background-color: #e0f7fa; */
+    background: url('images/bg/mypc.png') center center / cover no-repeat fixed;
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* เบลอพื้นหลัง */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: inherit;
+    filter: blur(12px) brightness(0.8);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#mainContent, header, .open-sidebar-btn, .sidebar {
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -246,7 +267,7 @@ button:hover {
 
 /* === Navbar Sidebar === */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     height: 100vh;
@@ -300,7 +321,7 @@ button:hover {
 
 /* Sidebar open button */
 .open-sidebar-btn {
-    position: fixed;
+    position: absolute;
     top: 24px;
     right: 32px;
     z-index: 2100;
@@ -347,17 +368,19 @@ button:hover {
         padding: 14px 28px;
     }
 
-    .sidebar.open {
-        width: 70vw;
-        min-width: 160px;
-    }
-    .shrink-main {
-        margin-right: 70vw;
-    }
     .open-sidebar-btn {
         right: 16px;
         top: 16px;
         padding: 8px 12px;
         font-size: 1.1rem;
+    }
+    .sidebar.open {
+        top: 0;
+        right: 0;
+        width: 70vw;
+        min-width: 160px;
+    }
+    .shrink-main {
+        margin-right: 70vw;
     }
 }

@@ -7,10 +7,38 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(120deg, #d0f0ff, #f0faff);
+    background: url('images/bg/mypc.png') center center / cover no-repeat fixed;
     color: #222;
     line-height: 1.6;
     padding-bottom: 50px;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: inherit;
+    filter: blur(12px) brightness(0.8);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#mainContent, header, .open-sidebar-btn, .sidebar {
+    position: relative;
+    z-index: 1;
+}
+
+.main-content-bg {
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    border-radius: 18px;
+    padding: 32px 0;
+    margin: 40px auto;
+    max-width: 900px;
 }
 
 header {
@@ -98,7 +126,7 @@ main {
 
 .buy-link {
     display: inline-block;
-    background-color: #ff5722;
+    background-color: #ff7300;
     color: white;
     padding: 10px 25px;
     font-size: 1rem;
@@ -145,7 +173,7 @@ main {
 
 /* === Navbar Sidebar === */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     height: 100vh;
@@ -199,7 +227,7 @@ main {
 
 /* Sidebar open button */
 .open-sidebar-btn {
-    position: fixed;
+    position: absolute;
     top: 24px;
     right: 32px;
     z-index: 2100;
@@ -241,6 +269,8 @@ main {
         padding: 8px 18px;
     }
     .sidebar.open {
+        top: 0;
+        right: 0;
         width: 70vw;
         min-width: 160px;
     }
