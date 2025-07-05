@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>โดเนทให้ฉลาม</title>
+    <link rel="icon" type="image/png" href="images/icon/donate.png">
+    <link rel="stylesheet" href="css/donate.css">
+    <script defer src="js/donate.js"></script>
+</head>
+<body>
+    <button class="open-sidebar-btn" onclick="toggleSidebar()">☰ เมนู</button>
+    <nav class="sidebar" id="sidebarNav">
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="shop.html">ร้านค้า</a></li>
+            <li><a href="about.html">เกี่ยวกับ</a></li>
+            <li><a href="donate.html">💸ยอดโด</a></li>
+        </ul>
+    </nav>
+    <div id="mainContent" class="donate-content-bg">
+        <header>
+            <h1>สนับสนุนฉลาม</h1>
+        </header>
+        <main>
+            <p>ขอบคุณทุกการสนับสนุน! นี้คือยอดเดือนนี้</p>
+            <div class="donate-iframe-container">
+                <iframe src="https://tipme.in.th/@overlay/v2?token=QXHDJ37v4oBM"
+                        frameborder="0"
+                        allowfullscreen
+                        class="donate-iframe"></iframe>
+            </div>
+        </main>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebarNav');
+            const mainContent = document.getElementById('mainContent');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                mainContent.classList.remove('shrink-main');
+            } else {
+                sidebar.classList.add('open');
+                mainContent.classList.add('shrink-main');
+            }
+        }
+    </script>
+</body>
+</html>body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../images/bg/mypc.png') center center / cover no-repeat fixed;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: inherit;
+    filter: blur(12px) brightness(0.8);
+    z-index: 0;
+    pointer-events: none;
+}
+#mainContent, header, .open-sidebar-btn, .sidebar {
+    position: relative;
+    z-index: 1;
+}
+.donate-content-bg {
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    border-radius: 18px;
+    padding: 32px 0;
+    margin: 40px auto;
+    max-width: 600px;
+}
+header {
+    background: #ff9800;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 18px 18px 0 0;
+}
+.donate-iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+.donate-iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: none;
+}
+.open-sidebar-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    z-index: 2100;
+    background: #4fc3f7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+}
+.open-sidebar-btn:hover {
+    background: #1976d2;
+}
+/* Sidebar styles */
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background: #4fc3f7;
+    overflow-x: hidden;
+    transition: width 0.3s cubic-bezier(.77,0,.18,1);
+    z-index: 2000;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+.sidebar.open {
+    width: 220px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0 0 0 30px;
+    margin: 0;
+    width: 100%;
+}
+.sidebar li {
+    margin: 18px 0;
+}
+.sidebar a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 0;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar a:hover {
+    background: #1976d2;
+    color: #fffbe7;
+}
+.shrink-main {
+    transition: margin-right 0.3s cubic-bezier(.77,0,.18,1);
+    margin-right: 220px;
+}
+@media screen and (max-width: 600px) {
+    .donate-content-bg {
+        margin: 10px;
+        padding: 10px 0;
+    }
+    .donate-iframe {
+        max-width: 98vw;
+        height: 250px;
+    }
+    .sidebar.open {
+        width: 70vw;
+        min-width: 160px;
+    }
+    .shrink-main {
+        margin-right: 70vw;
+    }
+    .open-sidebar-btn {
+        right: 16px;
+        top: 16px;
+        padding: 8px 12px;
+        font-size: 1.1rem;
+    }
+}
