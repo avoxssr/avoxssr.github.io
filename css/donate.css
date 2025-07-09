@@ -157,39 +157,47 @@ header {
 }
 /* Responsive: ปุ่มใหญ่ขึ้นและอ่านง่ายบนมือถือ */
 @media (max-width: 600px) {
-    .donate-content-bg {
-        margin: 8px;
-        padding: 8px 0;
-        max-width: 98vw;
-        border-radius: 16px;
+    .donate-content-bg, .main-content-bg, .content-section, .shop-block, #mainContent {
+        margin: 8px !important;
+        padding: 8px 0 !important;
+        max-width: 98vw !important;
+        border-radius: 14px !important;
+        box-sizing: border-box;
     }
-    .donate-iframe {
-        max-width: 98vw;
-        height: 220px;
-        border-radius: 12px;
+    .donate-iframe, .shop-image, .shop-carousel video {
+        max-width: 98vw !important;
+        height: 180px !important;
+        border-radius: 10px !important;
     }
-    .donate-tab {
-        font-size: 1.15rem;
-        padding: 16px 0;
-        border-radius: 12px;
-    }
-    .sidebar.open {
-        width: 80vw;
-        min-width: 140px;
-    }
-    .shrink-main {
-        margin-right: 80vw;
+    header {
+        font-size: 1.1rem !important;
+        padding: 18px 8px 10px 8px !important;
+        border-radius: 14px 14px 0 0 !important;
     }
     .open-sidebar-btn {
-        right: 12px;
-        top: 12px;
-        padding: 8px 12px;
-        font-size: 1.1rem;
+        right: 10px !important;
+        top: 10px !important;
+        padding: 7px 10px !important;
+        font-size: 1rem !important;
+    }
+    .sidebar.open {
+        width: 85vw !important;
+        min-width: 120px !important;
+    }
+    .shrink-main {
+        margin-right: 85vw !important;
     }
     .sidebar ul {
-        padding-left: 20px;
+        padding-left: 10px !important;
     }
     .sidebar li {
-        margin: 10px 0;
+        margin: 8px 0 !important;
+    }
+    .donate-tab, .buy-link, .contact-link, .tipme-link, button {
+        font-size: 1rem !important;
+        padding: 13px 0 !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 }
