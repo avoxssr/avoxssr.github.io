@@ -1,16 +1,17 @@
 /* === css/shop.css === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #d0f0ff, #f0faff);
     background: url('images/bg/mypc.png') center center / cover no-repeat fixed;
-    color: #222;
-    line-height: 1.6;
-    padding-bottom: 50px;
+color: #222;
+line-height: 1.6;
+padding-bottom: 50px;
     min-height: 100vh;
     position: relative;
 }
@@ -42,251 +43,240 @@ body::before {
 }
 
 header {
-    background: #00bcd4;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+background: #00bcd4;
+color: white;
+text-align: center;
+padding: 30px 20px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
+font-size: 2rem;
+letter-spacing: 1px;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    justify-items: center;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+padding: 20px;
+justify-items: center;
 }
 
 .shop-block {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+width: 100%;
+max-width: 500px;
+padding: 20px;
+background: white;
+border-radius: 20px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+text-align: center;
+transition: transform 0.3s ease;
 }
 
 .shop-title {
-    font-size: 1.4rem;
-    color: #00796b;
-    margin-bottom: 15px;
+font-size: 1.4rem;
+color: #00796b;
+margin-bottom: 15px;
 }
 
 .shop-image {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+width: 100%;
+max-width: 400px;
+border-radius: 12px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+margin-bottom: 15px;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .shop-image:hover {
-    transform: scale(1.15);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+transform: scale(1.15);
+box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .shop-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    overflow-x: auto;
-    padding: 10px 0;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+overflow-x: auto;
+padding: 10px 0;
+scroll-snap-type: x mandatory;
+scroll-padding: 50%;
 }
 
 .shop-carousel video {
-    scroll-snap-align: center;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    outline: none;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s;
-    opacity: 0.7;
-    transform: scale(0.9);
+scroll-snap-align: center;
+width: 250px;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+outline: none;
+transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s;
+opacity: 0.7;
+transform: scale(0.9);
 }
 
 .shop-carousel video.playing {
-    opacity: 1;
-    transform: scale(1);
+opacity: 1;
+transform: scale(1);
 }
 
 .shop-buy-btn {
-    margin-top: 20px;
+margin-top: 20px;
 }
 
 .buy-link {
-    display: inline-block;
+display: inline-block;
+    background-color: #ff5722;
     background-color: #ff7300;
-    color: white;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s;
+color: white;
+padding: 10px 25px;
+font-size: 1rem;
+border-radius: 8px;
+text-decoration: none;
+transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .buy-link:hover {
-    background-color: #e64a19;
-    transform: scale(1.1);
+background-color: #e64a19;
+transform: scale(1.1);
 }
 
 .navbar {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    z-index: 100;
+position: absolute;
+top: 20px;
+right: 40px;
+z-index: 100;
 }
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 20px;
 }
 .navbar li {
-    display: inline;
+display: inline;
 }
 .navbar a {
-    text-decoration: none;
-    color: #fff;
-    background: #4fc3f7;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+text-decoration: none;
+color: #fff;
+background: #4fc3f7;
+padding: 8px 18px;
+border-radius: 20px;
+font-weight: bold;
+transition: background 0.2s, color 0.2s;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .navbar a:hover {
-    background: #1976d2;
-    color: #fffbe7;
+background: #1976d2;
+color: #fffbe7;
 }
 
 /* === Navbar Sidebar === */
 .sidebar {
+    position: fixed;
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 0;
-    background: #4fc3f7;
-    overflow-x: hidden;
-    transition: width 0.3s cubic-bezier(.77,0,.18,1);
-    z-index: 2000;
-    box-shadow: -2px 0 12px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 60px;
+top: 0;
+right: 0;
+height: 100vh;
+width: 0;
+background: #4fc3f7;
+overflow-x: hidden;
+transition: width 0.3s cubic-bezier(.77,0,.18,1);
+z-index: 2000;
+box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 60px;
 }
 .sidebar.open {
-    width: 220px;
+width: 220px;
 }
 .sidebar .close-btn {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+position: absolute;
+top: 18px;
+right: 18px;
+font-size: 2rem;
+background: none;
+border: none;
+color: #fff;
+cursor: pointer;
 }
 .sidebar ul {
-    list-style: none;
-    padding: 0 0 0 30px;
-    margin: 0;
-    width: 100%;
+list-style: none;
+padding: 0 0 0 30px;
+margin: 0;
+width: 100%;
 }
 .sidebar li {
-    margin: 18px 0;
+margin: 18px 0;
 }
 .sidebar a {
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 0;
-    display: block;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
+color: #fff;
+font-size: 1.2rem;
+text-decoration: none;
+font-weight: bold;
+padding: 8px 0;
+display: block;
+border-radius: 8px;
+transition: background 0.2s, color 0.2s;
 }
 .sidebar a:hover {
-    background: #1976d2;
-    color: #fffbe7;
+background: #1976d2;
+color: #fffbe7;
 }
 
 /* Sidebar open button */
 .open-sidebar-btn {
+    position: fixed;
     position: absolute;
-    top: 24px;
-    right: 32px;
-    z-index: 2100;
-    background: #4fc3f7;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s;
+top: 24px;
+right: 32px;
+z-index: 2100;
+background: #4fc3f7;
+color: #fff;
+border: none;
+border-radius: 8px;
+padding: 10px 16px;
+font-size: 1.3rem;
+cursor: pointer;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+transition: background 0.2s;
 }
 .open-sidebar-btn:hover {
-    background: #1976d2;
+background: #1976d2;
 }
 
 /* Main content shrink when sidebar open */
 .shrink-main {
-    transition: margin-right 0.3s cubic-bezier(.77,0,.18,1);
-    margin-right: 220px;
+transition: margin-right 0.3s cubic-bezier(.77,0,.18,1);
+margin-right: 220px;
 }
 
-@media screen and (max-width: 600px) {
-    main {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-    .shop-title {
-        font-size: 1.2rem;
-    }
-    .shop-image,
-    .shop-carousel video {
-        width: 100%;
-        max-width: 90vw;
-    }
-    .buy-link {
-        font-size: 0.95rem;
-        padding: 8px 18px;
-    }
-    .sidebar.open {
-        top: 0;
-        right: 0;
-        width: 70vw;
-        min-width: 160px;
-    }
-    .shrink-main {
-        margin-right: 70vw;
-    }
-    .open-sidebar-btn {
-        right: 16px;
-        top: 16px;
-        padding: 8px 12px;
-        font-size: 1.1rem;
-    }
+/* === ปุ่มโดเนท (Tab Bar) ให้เหมือนกับ CSS หลัก === */
+.donate-tab {
+    background: #ff9800;
+    color: #fff !important;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+}
+.donate-tab:hover {
+    background: #ffb74d;
+    color: #fffbe7 !important;
 }
 
-@media (max-width: 600px) {
-    .main-content-bg, .content-section, #mainContent {
+/* === Container Query สำหรับ Responsive === */
+@container (max-width: 600px) {
+    .main-content-bg, .shop-block, #mainContent {
         margin: 8px !important;
         padding: 8px 0 !important;
         max-width: 98vw !important;
@@ -322,7 +312,7 @@ main {
     .sidebar li {
         margin: 8px 0 !important;
     }
-    .buy-link, button {
+    .donate-tab, .buy-link, .contact-link, .tipme-link, button {
         font-size: 1rem !important;
         padding: 13px 0 !important;
         border-radius: 10px !important;
