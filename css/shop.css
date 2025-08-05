@@ -57,7 +57,7 @@ letter-spacing: 1px;
 
 main {
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 gap: 15px;
 padding: 20px;
 justify-items: center;
@@ -251,11 +251,46 @@ margin-right: 220px;
     color: #fffbe7 !important;
 }
 
+/* === Responsive สำหรับ Desktop === */
+@media (min-width: 1025px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /* === Responsive สำหรับ Tablet === */
 @media (max-width: 1024px) and (min-width: 601px) {
     main {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+    }
+}
+
+/* === Responsive สำหรับ Mobile === */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .shop-block {
+        max-width: none;
+        padding: 10px;
+    }
+    
+    .shop-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .shop-title {
+        font-size: 1rem;
+    }
+    
+    .buy-link {
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
 }
 
